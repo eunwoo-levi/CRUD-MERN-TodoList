@@ -71,7 +71,7 @@ function App() {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center gap-6">
+    <div className="bg-blue-100 w-full min-h-screen flex flex-col justify-center items-center gap-6">
       <div className="w-[80%] flex flex-row justify-between items-center gap-[20px]">
         <input
           onChange={handleInputChange}
@@ -81,7 +81,7 @@ function App() {
         />
         <button
           onClick={handleAddClick}
-          className="bg-blue-300 w-[150px] h-[45px] text-white font-bold rounded-md"
+          className="bg-blue-300 w-[150px] h-[45px] text-white font-bold rounded-md hover:bg-blue-500"
         >
           추가
         </button>

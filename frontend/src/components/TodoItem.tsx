@@ -26,14 +26,14 @@ export default function TodoItem({
       </div>
       <div className="flex flex-row gap-[10px]">
         <button
-          onChange={() => deleteItem(item._id)}
-          className="border border-blue-400 text-blue-300 font-semibold w-[55px] h-[30px]"
+          onClick={() => deleteItem(item._id)}
+          className="border border-blue-400 text-blue-500 font-semibold w-[55px] h-[30px] hover:bg-red-400"
         >
           삭제
         </button>
         <button
-          onChange={() => toggleComplete(item._id)}
-          className="border border-blue-400 text-blue-300 font-semibold w-[55px] h-[30px]"
+          onClick={() => toggleComplete(item._id)}
+          className="border border-blue-400 text-blue-500 font-semibold w-[55px] h-[30px] hover:bg-green-400"
         >
           {item.isCompleted ? "완료" : "진행중"}
         </button>

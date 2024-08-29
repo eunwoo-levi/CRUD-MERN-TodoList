@@ -31,7 +31,7 @@ export default function TodoBoard({
               toggleComplete={toggleComplete}
             />
           ))
-        : "There is no Todo List."}
+        : "There is no To-do List."}
     </div>
   );
 }
