@@ -9,6 +9,9 @@
 
 **DataBase**
 - MongoDB   (배포: Mongodb Altas)
+
+- ![image](https://github.com/user-attachments/assets/346238c9-e101-4b88-9d74-83dd752f7c0d)
+
 <br/><br/>
 
 <br/>
