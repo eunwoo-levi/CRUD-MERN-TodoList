@@ -10,17 +10,17 @@
 **DataBase**
 - MongoDB  
 
-<Todo-List Page> <br/>
+Todo-List Page <br/>
 - ![image](https://github.com/user-attachments/assets/346238c9-e101-4b88-9d74-83dd752f7c0d)
 
 <br/><br/>
 
-<SignUp Page> <br/>
+SignUp Page <br/>
 - ![image](https://github.com/user-attachments/assets/59617e8c-a30f-4bb6-bb66-6ebbc7f60166)
 
 <br/><br/>
 
-<Login Page>
+Login Page
 - ![image](https://github.com/user-attachments/assets/0fa4b786-dbc4-4de1-a583-cb343e1d8287)
 
 <br/><br/>
