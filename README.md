@@ -1,3 +1,25 @@
+**Frontend**
+- React           (배포: netlify) 
+<br/><br/>
+
+
+**Backend**
+- Mongoose (node.js)   (배포: aws beanstalk)
+<br/><br/>
+
+**DataBase**
+- MongoDB   (배포: Mongodb Altas)
+
+- ![image](https://github.com/user-attachments/assets/346238c9-e101-4b88-9d74-83dd752f7c0d)
+
+<br/><br/>
+
+<br/>
+<br/>
+<br/>
+
+***
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
