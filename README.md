@@ -1,13 +1,13 @@
-<Frontend> <br/>
+**Frontend**
 - React           (배포: netlify) 
 <br/><br/>
 
 
-<Backend> <br/>
+**Backend**
 - Mongoose (node.js)   (배포: aws beanstalk)
 <br/><br/>
 
-<DataBase> <br/>
+**DataBase**
 - MongoDB   (배포: Mongodb Altas)
 <br/><br/>
 
