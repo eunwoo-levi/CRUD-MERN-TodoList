@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const app = express();
 const indexRouter = require("./routes/index");
+const cors = require("cors");
+app.use(cors());
 
 app.use(bodyParser.json());
 
@@ -16,6 +18,6 @@ mongoose
   .then(() => console.log("mongoose connected"))
   .catch((err) => console.log("DB connection failed", err));
 
-app.listen(4000, () => {
-  console.log("server on 4000");
+app.listen(5000, () => {
+  console.log("server on 5000");
 });

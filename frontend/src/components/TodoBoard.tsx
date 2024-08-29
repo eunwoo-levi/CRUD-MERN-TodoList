@@ -1,12 +1,11 @@
-import React from "react";
+import TodoItem from "./TodoItem";
 
 interface Task {
   _id: string;
   task: string;
-  isComplete: boolean;
+  isCompleted: boolean;
 }
 
-// TodoBoard 컴포넌트의 Props 타입을 정의합니다.
 interface TodoBoardProps {
   todoList: Task[];
   deleteItem: (id: string) => void;
@@ -19,16 +18,20 @@ export default function TodoBoard({
   toggleComplete,
 }: TodoBoardProps) {
   return (
-    <div className="w-[80%] mx-auto flex flex-row justify-between items-center px-[20px] border border-blue-500 h-[50px]">
-      <div className="font-bold text-blue-400 text-[20px]">내용</div>
-      <div className="flex flex-row gap-[10px]">
-        <button className="border border-blue-400 text-blue-300 font-semibold w-[55px] h-[30px]">
-          삭제
-        </button>
-        <button className="border border-blue-400 text-blue-300 font-semibold w-[55px] h-[30px]">
-          체크
-        </button>
-      </div>
+    <div className="w-full flex flex-col gap-[5px]">
+      <h1 className="text-center text-[35px] font-semibold text-blue-500 mb-[20px]">
+        Todo List
+      </h1>
+      {todoList.length > 0
+        ? todoList.map((item, index) => (
+            <TodoItem
+              item={item}
+              key={index}
+              deleteItem={deleteItem}
+              toggleComplete={toggleComplete}
+            />
+          ))
+        : "There is no Todo List."}
     </div>
   );
 }

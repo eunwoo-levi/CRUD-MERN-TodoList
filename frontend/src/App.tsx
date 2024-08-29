@@ -6,7 +6,7 @@ import api from "./utils/api";
 interface Task {
   _id: string;
   task: string;
-  isComplete: boolean;
+  isCompleted: boolean;
 }
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
     try {
       const res = await api.post("/tasks", {
         task: todoValue,
-        isComplieted: false,
+        isCompleted: false,
       });
 
       if (res.status === 200) {
@@ -58,10 +58,10 @@ function App() {
     try {
       const task = todoList.find((item) => item._id === id);
       if (task) {
-        const response = await api.put(`/tasks/${id}`, {
-          isComplete: !task.isComplete,
+        const res = await api.put(`/tasks/${id}`, {
+          isCompleted: !task.isCompleted,
         });
-        if (response.status === 200) {
+        if (res.status === 200) {
           getTasks();
         }
       }
@@ -86,16 +86,12 @@ function App() {
           추가
         </button>
       </div>
-      <div className="w-full flex flex-col gap-[5px]">
-        <h1 className="text-center text-[35px] font-semibold text-blue-500 mb-[20px]">
-          Todo List
-        </h1>
-        <TodoBoard
-          todoList={todoList}
-          deleteItem={deleteItem}
-          toggleComplete={toggleComplete}
-        />
-      </div>
+
+      <TodoBoard
+        todoList={todoList}
+        deleteItem={deleteItem}
+        toggleComplete={toggleComplete}
+      />
     </div>
   );
 }
