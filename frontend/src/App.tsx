@@ -2,17 +2,28 @@ import { Route, Routes } from "react-router-dom";
 import TodoPage from "./pages/TodoPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PrivateRoute from "./route/PrivateRoute";
+import api from "./utils/api";
 
 export default function App() {
   const [user, setUser] = useState(null);
 
   const getUser = async () => {
     try {
-      const token = await sessionStorage.getItem("token");
-    } catch (err) {}
+      const storedToken = await sessionStorage.getItem("token");
+      if (storedToken) {
+        const res = await api.get("/user/me");
+        setUser(res.data.user);
+      }
+    } catch (err) {
+      setUser(null);
+    }
   };
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   return (
     <Routes>
@@ -25,7 +36,10 @@ export default function App() {
         }
       />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route
+        path="/login"
+        element={<LoginPage user={user} setUser={setUser} />}
+      />
     </Routes>
   );
 }

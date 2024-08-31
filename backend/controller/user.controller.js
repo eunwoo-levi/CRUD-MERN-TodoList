@@ -39,7 +39,6 @@ userController.loginWithEmail = async (req, res) => {
         const token = jwt.sign({ _id: user._id }, JWT_SECRET_KEY, {
           expiresIn: "1d",
         });
-        console.log("토큰이다ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ", token);
         return res.status(200).json({ status: "success", user, token });
       } else {
         throw new Error("입력하신 비밀번호가 일치하지 않습니다.");
@@ -49,6 +48,19 @@ userController.loginWithEmail = async (req, res) => {
     }
   } catch (err) {
     res.status(400).json({ status: "fail", message: err.message });
+  }
+};
+
+userController.getUser = async (req, res) => {
+  try {
+    const { userId } = req;
+    const user = await User.findById(userId);
+    if (!user) {
+      throw new Error("can't find User");
+    }
+    res.status(200).json({ status: "success", User });
+  } catch (error) {
+    res.status(400).json({ status: "fail", message: error.message });
   }
 };
 

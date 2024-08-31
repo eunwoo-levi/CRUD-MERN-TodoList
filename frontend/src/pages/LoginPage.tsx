@@ -1,12 +1,11 @@
 import { useState } from "react";
 import api from "../utils/api";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
-export default function LoginPage() {
+export default function LoginPage({ user, setUser }: any) {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const [user, setUser] = useState(null);
 
   const navigate = useNavigate();
 
@@ -33,6 +32,10 @@ export default function LoginPage() {
       setError(err.message);
     }
   };
+
+  if (user) {
+    return <Navigate to={"/"} />;
+  }
 
   return (
     <div className="bg-blue-100 w-full min-h-screen flex justify-center items-center">
