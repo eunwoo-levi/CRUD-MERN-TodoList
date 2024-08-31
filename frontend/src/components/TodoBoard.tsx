@@ -4,6 +4,9 @@ interface Task {
   _id: string;
   task: string;
   isCompleted: boolean;
+  author: {
+    name: string;
+  };
 }
 
 interface TodoBoardProps {

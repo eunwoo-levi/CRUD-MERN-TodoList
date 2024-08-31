@@ -2,6 +2,9 @@ interface Task {
   _id: string;
   task: string;
   isCompleted: boolean;
+  author: {
+    name: string;
+  };
 }
 
 interface TodoItemProps {
@@ -24,6 +27,7 @@ export default function TodoItem({
       >
         {item.task}
       </div>
+      <div className="font-semibold text-blue-300">by {item.author.name}</div>
       <div className="flex flex-row gap-[10px]">
         <button
           onClick={() => deleteItem(item._id)}

@@ -6,6 +6,9 @@ interface Task {
   _id: string;
   task: string;
   isCompleted: boolean;
+  author: {
+    name: string;
+  };
 }
 
 export default function TodoPage() {
@@ -14,6 +17,7 @@ export default function TodoPage() {
 
   const getTasks = async () => {
     const res = await api.get("/tasks");
+    console.log("테스크리스트!!!!!!!!: ", res.data.data);
     setTodoList(res.data.data);
   };
 

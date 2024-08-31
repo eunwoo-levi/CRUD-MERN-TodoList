@@ -58,7 +58,7 @@ userController.getUser = async (req, res) => {
     if (!user) {
       throw new Error("can't find User");
     }
-    res.status(200).json({ status: "success", User });
+    res.status(200).json({ status: "success", user });
   } catch (error) {
     res.status(400).json({ status: "fail", message: error.message });
   }
